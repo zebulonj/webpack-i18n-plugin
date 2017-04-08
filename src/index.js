@@ -1,1 +1,7 @@
-console.log( "Hello!" );
+export function LocalizationPlugin( options ) {
+
+}
+
+LocalizationPlugin.prototype.apply = function( compiler ) {
+  
+};

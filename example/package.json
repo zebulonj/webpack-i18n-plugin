@@ -1,0 +1,15 @@
+{
+  "name": "webpack-i18n-plugin-example",
+  "version": "0.0.0",
+  "description": "Example usage of the webpack-i18n-plugin.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Zebulon Young (zebulonj@gmail.com)",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-loader": "^6.4.1",
+    "webpack": "^2.3.3"
+  }
+}
