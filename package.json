@@ -1,5 +1,5 @@
 {
-  "name": "webpack-i18n-plugin",
+  "name": "@zebulonj/webpack-i18n-plugin",
   "version": "0.0.0",
   "description": "i18n localization via webpack",
   "main": "index.js",
@@ -33,5 +33,9 @@
     "eslint": "^3.19.0",
     "git-hooks": "^1.1.8",
     "webpack": "^2.3.3"
+  },
+  "dependencies": {
+    "babel-plugin-transform-object-assign": "^6.22.0",
+    "immutable": "^3.8.1"
   }
 }

@@ -1,10 +1,11 @@
 var path = require( 'path' );
 var webpack = require( 'webpack' );
 
-var LocalizationPlugin = require( '../lib/index.js' );
+var LocalizationPlugin = require( '../index.js' ).default;
 
 var plugins = [
-  new webpack.NamedModulesPlugin()
+  new webpack.NamedModulesPlugin(),
+  new LocalizationPlugin()
 ];
 
 if ( process.env.NODE_ENV === "production" ) {
