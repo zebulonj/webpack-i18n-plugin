@@ -51,7 +51,8 @@ LocalizationPlugin.prototype.apply = function( compiler ) {
 
   compiler.plugin( 'emit', ( compilation, callback ) => {
     const body = this.getStrings()
-      .map( string => string.replace( /["]/g, '"' ) )
+      .sort()
+      .map( string => string.replace( /["]/g, '\\"' ) )
       .map( string => `\t"${ string }":\n\t\t""` )
       .join( ",\n" );
 
