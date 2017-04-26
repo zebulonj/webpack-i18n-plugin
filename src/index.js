@@ -3,7 +3,9 @@ import { Set } from 'immutable';
 import ConstDependency from 'webpack/lib/dependencies/ConstDependency';
 import NullFactory from 'webpack/lib/NullFactory';
 
-const defaultOptions = {};
+const defaultOptions = {
+  strings: false
+};
 
 export function LocalizationPlugin( options = {} ) {
   this.options = Object.assign( {}, defaultOptions, options );
@@ -19,6 +21,8 @@ LocalizationPlugin.prototype.getStrings = function() {
 }
 
 LocalizationPlugin.prototype.apply = function( compiler ) {
+  const { strings } = this.options;
+
   compiler.plugin( 'compilation', ( compilation, data ) => {
     compilation.dependencyFactories.set( ConstDependency, new NullFactory() );
 		compilation.dependencyTemplates.set( ConstDependency, new ConstDependency.Template() );
@@ -35,8 +39,7 @@ LocalizationPlugin.prototype.apply = function( compiler ) {
 
         this.addString( param );
 
-        //var result = localization ? localization(param) : defaultValue;
-        const result = param;
+        const result = strings ? strings[param] : param;
 
         var dep = new ConstDependency( JSON.stringify( result ), expr.range );
         dep.loc = expr.loc;
